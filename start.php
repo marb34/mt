@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link type="image/x-icon" rel="shortcut-icon" href="favicon.ico" />
    <link rel="stylesheet" type="text/css" href="css/styles/jchartfx.css" />
    <script type="text/javascript" src="js/jquery.js"></script>
    <script type="text/javascript" src="js/jchartfx/jchartfx.system.js"></script>

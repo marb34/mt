@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^/index\.htm$ ./start.php [PT,R]
