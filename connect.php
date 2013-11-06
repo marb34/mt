@@ -32,7 +32,9 @@ class MySQLCon {
     
     function consulta1($query){
         $resultado=mysql_query($query);
-        return $resultado;
+        $devolver["resultante"]=mysql_fetch_assoc($resultado);
+        $devolver["contador"]=mysql_num_rows($resultado);
+        return $devolver;
     }
 } 
 ?>

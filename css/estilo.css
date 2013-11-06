@@ -1,6 +1,27 @@
 html{
     font-family: "Arial","Times New Roman",sans-serif;
 }
+
+div#x1{
+    
+    position: relative;
+    top: 30px;
+    overflow: hidden;
+}
+
+div#contenedor{
+    position: relative;
+    margin: 25px;
+    overflow: visible;
+}
+
+div#ChartDiv{
+    width:600px;
+    height:400px;
+    position: relative;
+    float: left;
+    margin-top: 25px;
+}
 form{
     position: relative;
     margin: 5px;
