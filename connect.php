@@ -29,5 +29,10 @@ class MySQLCon {
         $result=mysql_query("SELECT * FROM $table");
         return $result;
     }
+    
+    function consulta1($query){
+        $resultado=mysql_query($query);
+        return $resultado;
+    }
 } 
 ?>

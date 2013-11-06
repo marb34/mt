@@ -6,7 +6,6 @@
  */
 $usuario1=$_GET["user"]; 
 echo $usuario1;
-//die("HOla");
 require_once "connect.php";
 
 $conexion=new MySQLCon;

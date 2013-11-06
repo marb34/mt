@@ -2,6 +2,7 @@
 <html>
 <head>
     <link type="image/x-icon" rel="shortcut-icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
    <link rel="stylesheet" type="text/css" href="css/styles/jchartfx.css" />
    <script type="text/javascript" src="js/jquery.js"></script>
    <script type="text/javascript" src="js/jchartfx/jchartfx.system.js"></script>
@@ -27,6 +28,7 @@
    </script>
 </head>
 <body onload="loadChart()">
+<header><?php include "menu.php"; ?></header>
 <form>
 Nombre de Usuario : <input type='text' name='usuario' id="usuario" />
 <input type="button" value="ok" class="boton1" />
