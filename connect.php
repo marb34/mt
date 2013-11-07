@@ -25,11 +25,21 @@ class MySQLCon {
         return $conect;
     }
     
+    /**
+     * To realize a complete select
+     * @param string $table
+     * @return resource
+     */
     function cons_todo($table){
         $result=mysql_query("SELECT * FROM $table");
         return $result;
     }
     
+    /**
+     * Realize the query and return the associative array and the count
+     * @param string $query
+     * @return array with (resource,int)
+     */
     function consulta1($query){
         $resultado=mysql_query($query);
         $devolver["resultante"]=mysql_fetch_assoc($resultado);

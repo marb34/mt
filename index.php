@@ -38,7 +38,7 @@ Nombre de Usuario : <input type='text' name='usuario' id="usuario" />
 </div>
 <div id="contenedor"></div>
 <div id="ChartDiv"></div>
-<script type="text/javascript" language="javascript">
+<script type="text/javascript">
     var chart1;
 
     function loadChart()
