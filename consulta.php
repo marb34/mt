@@ -5,7 +5,6 @@
  * @version 0.1
  */
 $usuario1=$_GET["user"]; 
-//echo $usuario1." ";
 require_once "connect.php";
 
 $conexion=new MySQLCon;
@@ -24,17 +23,34 @@ $query1="
 		GROUP BY b.handler_id
 		LIMIT 0,30";
 
-/* FIN de consultas*/
-/*
-$resultante=mysql_query($query);
-$cantidad=mysql_num_rows($resultante);
-$resultante1=mysql_query($query1);
-*/
-$resultante=$conexion->consulta1($query1);
-for($i=0;$resultante["contador"]>$i;$i++){
-	echo json_encode($resultante["resultante"][$i]["realname"])." :: ";
-	echo json_encode($resultante["resultante"][$i]["Total"])."<br/>";
-	echo "<hr/>";
-}
+$query3 ="
+        SELECT *
+        FROM mantis_bug_table
+        WHERE status=80
+";
 
+/* FIN de consultas*/
+
+$resultante=$conexion->consulta1($query1);
+//print_r($resultante);
+echo "<form id='formulario'>";
+for($i=0;$resultante["contador"]>$i;$i++){
+    echo "<input type='text' id='valor-id-$i' name='valor-id-$i' value='".$resultante["resultante"][$i]["id"]."'/>";
+    echo "<input type='text' id='valor-reu-$i' name='valor-reu-$i' value='".$resultante["resultante"][$i]["realname"]."'/>";
+    echo "<br/>";
+}    
+echo "<input type ='hidden' id='cantidad' name ='cantidad' value='".$resultante["contador"]."' />";
+echo "</form>";
+echo "<hr/>";
+echo "<hr/>";
+$resultante2=$conexion->consulta1($query3);
+echo "<form id='formulario2'>";
+for($i=0;$resultante2["contador"]>$i;$i++){
+    echo "ID :: <input type = 'text' name='resid$i' id='resid$i' value='".$resultante2["resultante"][$i]["id"]."' />";
+	echo "Reportero :: <input type = 'text' name='rerep$i' id='rerep$i' value='".$resultante2["resultante"][$i]["reporter_id"]."'/>";
+	echo "Asignado :: <input type = 'text' value='".$resultante2["resultante"][$i]["handler_id"]."' />";
+	echo "Status :: <input type = 'text' value='".$resultante2["resultante"][$i]["status"]."'/>";
+    echo "<br/>";
+}
+echo "</form>";
 ?>

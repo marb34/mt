@@ -13,6 +13,9 @@
         $(".boton1").click(function(){
             enviar1();
         });
+        $(".boton2").click(function(){
+            serializar();
+        });
         });
         function enviar1(){
             var user_name = document.getElementById("usuario").value;
@@ -25,27 +28,34 @@
                             $('#contenedor').html(data);
                         }
             });
+            }
+        
+        function serializar(){
+            var contenido=$("#formulario").serialize();
+            alert(contenido);
+            //$("#contenedor2").load("fxchart1.php");
             $.ajax({
-				type 	: "GET",
-				url     : "fxchart1.php",
-				data	: $('#contenedor').serialize(),
-				success	: function(data){
-							alert (data);
-					}
+                type    : "GET",
+                url     : "fxchart1.php",
+                data    : contenido,
+                success : function(data, textStatus, jqXHR){
+                            $('#contenedor2').html(data);
+                        }
             });
-    }
+        }
    </script>
 </head>
-<body onload="loadChart()">
+<body >
 <header><?php include "menu.php"; ?></header>
 <div id="x1">
 	<form>
 	Nombre de Usuario : <input type='text' name='usuario' id="usuario" />
 	<input type="button" value="ok" class="boton1" />
 	</form>
+    <input type="button" value="try me" class="boton2" />
 </div>
 <div id="contenedor"></div>
-
+<div id="contenedor2"></div>
 <div id="ChartDiv"></div>
 </body>
 </html>
