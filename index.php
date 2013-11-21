@@ -46,16 +46,16 @@
    </script>
 </head>
 <body >
-<header><?php include "menu.php"; ?></header>
-<div id="x1">
-	<form>
-	Nombre de Usuario : <input type='text' name='usuario' id="usuario" />
-	<input type="button" value="ok" class="boton1" />
-	</form>
-    <input type="button" value="try me" class="boton2" />
-</div>
-<div id="contenedor"></div>
-<div id="contenedor2"></div>
-<div id="ChartDiv"></div>
+	<header><?php include "menu.php"; ?></header>
+	<div id="x1">
+		<form>
+			Nombre de Usuario : <input type='text' name='usuario' id="usuario" />
+			<input type="button" value="ok" class="boton1" />
+		</form>
+	    <input type="button" value="try me" class="boton2" />
+	</div>
+	<div id="contenedor"></div>
+	<div id="contenedor2"></div>
+	<div id="ChartDiv"></div>
 </body>
 </html>
