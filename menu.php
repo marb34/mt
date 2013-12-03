@@ -26,7 +26,7 @@
                     </ul></div>
                 </li>
                 <li><a href="#"><span>Sub Item 2</span></a></li>
-                <li><a href="#"><span>Sub Item 3</span></a></li>
+                <li><a href="index.php"><span>Recall - Reset</span></a></li>
             </ul></div>
         </li>
         <li><a href="#" class="parent"><span>Product Info</span></a>

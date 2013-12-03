@@ -18,9 +18,9 @@ function loadChart()
 	chart1.getData().setSeries(2);
 	chart1.getAxisY().setMin(0);
 	chart1.getAxisY().setMax(20);
-	//var series1 = chart1.getSeries().getItem(0);
+	var series1 = chart1.getSeries().getItem(0);
 	var series2 = chart1.getSeries().getItem(0);
-	//series1.setGallery(cfx.Gallery.Lines);
+	series1.setGallery(cfx.Gallery.Lines);
 	series2.setGallery(cfx.Gallery.Bar);
 	var data = /*[
 	{ "Month": "Jan", "Bikes": 1800, "Parts": 1300 },
