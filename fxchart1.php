@@ -1,14 +1,27 @@
 <?php 
-$contador=$_GET["cantidad"];
+$contador=(int)$_GET["cantidad-1"];
 for ($i=0;$contador>$i;$i++){
-    $usuario_id=$_GET["valor-id-$i"];
+    $cant_casos=$_GET["valor-id-$i"];
+    $uid=$_GET["userid-$i"];
     $usuario_nombre=$_GET["valor-reu-$i"];
-    $primerarray[]=array("nombre"=>$usuario_nombre,"uid"=>(int)$usuario_id);
+    $Total_tipo=$_GET["res_usr-$i"];
+    $primerarray[]=array("nombre"=>$usuario_nombre,"casos"=>(int)$cant_casos,"Resueltos"=>(int)$Total_tipo);
 }
 //var_dump($primerarray);
 echo json_encode($primerarray);
 $valores_recibidos=json_encode($primerarray);
+
+//consulta extra
+
+/*$nuevo=NEW MySQLCon;
+$queryx="SELECT * FROM mantis_bug_table";
+$resultado1=$nuevo->consulta1($queryx);
+$cantidad2=$resultado1["contador"];
+print_r($resultado1);
+echo "<br/>";
+*/
 ?>
+
 <script type="text/javascript">
 var chart1;
 

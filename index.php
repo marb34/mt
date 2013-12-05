@@ -3,12 +3,12 @@
 <head>
     <link type="image/x-icon" rel="shortcut-icon" href="favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
-   <link rel="stylesheet" type="text/css" href="css/styles/jchartfx.css" />
-   <script type="text/javascript" src="js/jquery.js"></script>
-   <script type="text/javascript" src="js/menu.js"></script>
-   <script type="text/javascript" src="js/jchartfx/jchartfx.system.js"></script>
-   <script type="text/javascript" src="js/jchartfx/jchartfx.coreBasic.js"></script>
-   <script type="text/javascript">
+    <link rel="stylesheet" type="text/css" href="css/styles/jchartfx.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/jchartfx/jchartfx.system.js"></script>
+    <script type="text/javascript" src="js/jchartfx/jchartfx.coreBasic.js"></script>
+    <script type="text/javascript">
     $(document).ready(function(){
         $(".boton1").click(function(){
             enviar1();

@@ -19,54 +19,34 @@ else{
     $where="AND 1=1";
 }
 
-$query1="
-		SELECT *,username
-		FROM mantis_bug_table AS b, mantis_user_table AS u
-		WHERE b.handler_id=u.id
-        $where
-        GROUP BY b.handler_id
-		";
-
 $query="
-		SELECT *,COUNT(*) AS Total
+		SELECT b.id,u.realname,u.username,u.id,COUNT(b.handler_id) AS Total
 		FROM mantis_bug_table AS b, mantis_user_table AS u
 		WHERE b.handler_id=u.id
-        AND status=$option1
 		GROUP BY b.handler_id
 		";
 
-$query3 ="
-        SELECT *
-        FROM mantis_bug_table
-        ";
 
 /* FIN de consultas*/
 
-echo $query."<br/>";
-echo $query1;
 $resultante=$conexion->consulta1($query);
-//$resultante2=$conexion->consulta1($query);
-//print_r($resultante);
 echo "<form id='formulario'><p><h1>$label1</h1></p>";
     for($i=0;$resultante["contador"]>$i;$i++){
-        echo "<input type='text' id='valor-id-$i' name='valor-id-$i' value='".$resultante["resultante"][$i]["id"]."'/>";
-        echo "<input type='text' id='valor-reu-$i' name='valor-reu-$i' value='".$resultante["resultante"][$i]["realname"]."'/>";
-        echo "<br/>";
+        echo "<input type='hidden' id='valor-id-$i' name='valor-id-$i' value='".$resultante["resultante"][$i]["Total"]."'/>";
+        echo "Usuario :: <input type='text' id='valor-reu-$i' name='valor-reu-$i' value='".$resultante["resultante"][$i]["username"]."'/>";
+        echo "Casos Asignados :: <input type='text' id='Total-$i' name='Total-$i' value='".$resultante["resultante"][$i]["Total"]."'/>";
+        echo "<input type='hidden' id='userid-$i' name='userid-$i' value='".$resultante["resultante"][$i]["id"]."'/>";
+            $queryx="SELECT COUNT(*) AS resolved FROM mantis_bug_table WHERE handler_id=".$resultante["resultante"][$i]["id"]." AND status=80 ORDER BY handler_id";
+            //echo "<br/>".$queryx;
+            $resultado1=mysql_query($queryx);
+            $resueltos=mysql_result($resultado1,0,"resolved");
+            //print_r($resultado1);
+            echo "<p>Total de Resueltos :: $resueltos</p>";
+            echo "<input type='hidden' id='res_usr-$i' name='res_usr-$i' value='".$resueltos."'/>";
+        echo "<hr/>";
     }    
-    echo "<input type ='hidden' id='cantidad' name ='cantidad' value='".$resultante["contador"]."' />";
+    echo "<input type ='hidden' id='cantidad-1' name ='cantidad-1' value='".$resultante["contador"]."' />";
 echo "</form>";
 echo "<hr/>";
-echo "<hr/>";
-$resultante2=$conexion->consulta1($query1);
-echo "<script>alert(".json_encode($resultante2).");</script>";
-echo "<form id='formulario2'>";
-for($i=0;$resultante2["contador"]>$i;$i++){
-    echo "ID :: <input type = 'text' name='resid$i' id='resid$i' value='".$resultante2["resultante"][$i]["id"]."' />";
-	echo "Reportero :: <input type = 'text' name='rerep$i' id='rerep$i' value='".$resultante2["resultante"][$i]["reporter_id"]."'/>";
-	echo "Asignado :: <input type = 'text' value='".$resultante2["resultante"][$i]["handler_id"]."' />";
-	echo "Usr_asignado :: <input type = 'text' value='".$resultante2["resultante"][$i]["username"]."' />";
-    echo "Status :: <input type = 'text' value='".$resultante2["resultante"][$i]["Total"]."'/>";
-    echo "<br/>";
-}
-echo "</form>";
+
 ?>
