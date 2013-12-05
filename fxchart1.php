@@ -8,7 +8,7 @@ for ($i=0;$contador>$i;$i++){
     $primerarray[]=array("nombre"=>$usuario_nombre,"casos"=>(int)$cant_casos,"Resueltos"=>(int)$Total_tipo);
 }
 //var_dump($primerarray);
-echo json_encode($primerarray);
+//echo json_encode($primerarray);
 $valores_recibidos=json_encode($primerarray);
 
 //consulta extra

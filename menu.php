@@ -25,7 +25,7 @@
                         </li>
                     </ul></div>
                 </li>
-                <li><a href="#"><span>Sub Item 2</span></a></li>
+                <li><a onclick="enviar1();" id="primero"><span>Comparacion - casos resueltos por usuario</span></a></li>
                 <li><a href="index.php"><span>Recall - Reset</span></a></li>
             </ul></div>
         </li>
