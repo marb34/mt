@@ -25,16 +25,16 @@
                         </li>
                     </ul></div>
                 </li>
-                <li><a onclick="enviar1();" id="primero"><span>Comparacion - casos resueltos por usuario</span></a></li>
+                <li><a onclick="enviar1('casres');" id="primero"><span>Comparacion - casos resueltos por usuario</span></a></li>
                 <li><a href="index.php"><span>Recall - Reset</span></a></li>
             </ul></div>
         </li>
-        <li><a href="#" class="parent"><span>Product Info</span></a>
+        <li><a href="#" class="parent"><span>Est. de Mantis</span></a>
             <div><ul>
-                <li><a href="#" class="parent"><span>Sub Item 1</span></a>
+                <li><a href="#" class="parent"><span>por fechas</span></a>
                     <div><ul>
-                        <li><a href="#"><span>Sub Item 1.1</span></a></li>
-                        <li><a href="#"><span>Sub Item 1.2</span></a></li>
+                        <li><a onclick="enviar1('porfechas');"><span>Fecha de Reporte</span></a></li>
+                        <li><a onclick="enviar1('fechasresuelto');"><span>Fecha de Resuelto</span></a></li>
                     </ul></div>
                 </li>
                 <li><a href="#" class="parent"><span>Sub Item 2</span></a>

@@ -14,12 +14,25 @@
             enviar1();
         });
     });
-        function enviar1(){
-            var user_name = document.getElementById("usuario").value;
+        function enviar1(option1){
+            //var user_name = document.getElementById("usuario").value;
+            if (option1=="porfechas"){
+              alert("es por fechas...!");
+              $.ajax({
+                type    : "GET",
+                url     : "fechas.php",
+                data    : {opt:option1},
+                success : function(data, textStatus, jqXHR){
+                            $('#contenedor').html(data);
+                            serializar();
+                        }
+            });  
+            } 
+            
             $.ajax({
                 type    : "GET",
                 url     : "consulta.php",
-                data    : {user:user_name},
+                data    : {opt:option1},
                 success : function(data, textStatus, jqXHR){
                             $('#contenedor').html(data);
                             serializar();
